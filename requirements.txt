@@ -1,0 +1,15 @@
+# Python 3.10. For exact versions, replace this list with the output of `pip freeze` from your analysis environment.
+spacec
+scanpy
+anndata
+numpy
+pandas
+scipy
+scikit-image
+matplotlib
+tifffile
+opencv-python
+shapely
+pillow
+papermill
+jupyter
