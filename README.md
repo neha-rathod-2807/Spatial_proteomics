@@ -3,8 +3,8 @@
 Analysis code for the Master's thesis *Phenotyping and Vascular Characterization of Synovial Sarcoma*
 (Neha Rathod, Institute of Pathology, Technical University of Munich).
 
-The notebooks analyse multiplexed immunofluorescence images (CODEX / PhenoCycler-Fusion, 28-marker panel)
-of FFPE synovial sarcoma sections: denoising, cell segmentation, clustering and cell-type annotation,
+The notebooks analyse multiplexed immunofluorescence images (CODEX / PhenoCycler-Fusion)
+: denoising, cell segmentation, clustering and cell-type annotation,
 vessel segmentation in the CD31 channel, and vascular features including vessel maturity.
 
 ## Pipeline
