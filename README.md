@@ -36,9 +36,37 @@ instructions if the plain `pip install` fails.
 
 ## Usage
 
-1. Set the paths in the cells marked `# <-- EDIT` (all paths in this repository are placeholders such as `path/to/output`).
-2. For each sample, provide the raw image, the channel-name file and a QuPath outline of the region to analyse (GeoJSON).
-3. Run 03a and 03b (by hand or with `run_batch.py`), annotate in 03c, then run 06 and 07.
+1. For each sample, provide the raw image, the channel-name file and a QuPath outline of the region to analyse (GeoJSON).
+2. Make a `samples.csv` with one row per sample (copy `samples_example.csv`; columns below).
+3. Run 03a and 03b for all samples:
+
+   ```bash
+   python run_batch.py samples.csv --output-root path/to/output
+   python run_batch.py samples.csv --output-root path/to/output --dry-run        # check the table first
+   python run_batch.py samples.csv --output-root path/to/output --samples ss1    # one sample only
+   ```
+
+   Each sample gets a folder `path/to/output/<sample>/` with the results, the figures and the executed copies of
+   both notebooks. A sample that fails is reported at the end and the others continue.
+4. Annotate each sample in `03c_annotate.ipynb` (set `SAMPLE` and `OUTPUT_ROOT`, fill in `cluster_to_ct_dict`).
+5. Run `06_vessel_segmentation.ipynb` and `07_vascular_features.ipynb` for all samples
+   (set the paths in the cells marked `# <-- EDIT`).
+
+All paths in this repository are placeholders such as `path/to/output`.
+
+### Columns of `samples.csv`
+
+| Column | Meaning | Example |
+|---|---|---|
+| `sample` | Sample ID; name of the output folder | `ss1` |
+| `condition` | Lesion and histology | `primary_monophasic` |
+| `region` | Region name of the CODEX run | `reg001` |
+| `raw_image` | Raw OME-TIFF | `path/to/raw/ss1.ome.tif` |
+| `channel_file` | Channel names, one per line (or give `--channel-file` once for all samples) | `path/to/raw/channelnames.txt` |
+| `geojson` | QuPath outline of the region to analyse (required) | `path/to/qupath/ss1_region.geojson` |
+| `failed_markers` | Antibodies without specific staining in this sample, comma-separated | `FOXP3,VEGFA,CD4,CD163` |
+| `membrane_channels` | Membrane channel(s) for whole-cell segmentation; empty = nuclei only | `CD68` |
+| `ring_markers` | Markers measured in the cytoplasm ring instead of the nucleus | `CD68,CD206` |
 
 ## Data
 

@@ -1,0 +1,3 @@
+sample,condition,region,raw_image,channel_file,geojson,failed_markers,membrane_channels,ring_markers
+ss1,primary_monophasic,reg001,path/to/raw/ss1.ome.tif,path/to/raw/channelnames.txt,path/to/qupath/ss1_region.geojson,"FOXP3,VEGFA,CD4,CD163,TIE2,VEGFR1",CD68,"CD68,CD206"
+ss2,metastasis_monophasic,reg002,path/to/raw/ss2.ome.tif,path/to/raw/channelnames.txt,path/to/qupath/ss2_region.geojson,"FOXP3,VEGFA,CD4,CD163,CTLA-4",,
