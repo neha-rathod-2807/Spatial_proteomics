@@ -1,0 +1,30 @@
+# Images and patient data: never upload
+*.ome.tif
+*.ome.tiff
+*.tif
+*.tiff
+*.qptiff
+*.h5ad
+*.npz
+*.geojson
+data/
+output/
+outputs/
+thesis_output/
+samples.csv
+
+# Results tables and figures produced by the notebooks
+*_cells_corrected.csv
+*_cells_annotated.csv
+*_vessels*.csv
+*_cells_vessels.csv
+*_vessel_*.csv
+figures/
+
+# Python and Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
