@@ -1,4 +1,4 @@
-# Phenotyping and vascular characterization of Multiplex IF(CODEX)
+# Phenotyping and vascular characterization of Multiplex IF (CODEX)
 
 Analysis code for the Master's thesis *Phenotyping and Vascular Characterization of Synovial Sarcoma*
 (Neha Rathod, Institute of Pathology, Technical University of Munich).
